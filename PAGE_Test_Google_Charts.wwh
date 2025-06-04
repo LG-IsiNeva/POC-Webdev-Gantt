@@ -1,0 +1,597 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : PAGE_Test_Google_Charts
+ major_version : 30
+ minor_version : 0
+ type : 65538
+ description : ""
+ subtype : 0
+page :
+ name : PAGE_Test_Google_Charts
+ identifier : 0x283ed6c8017e6d1f
+ internal_properties : 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
+ properties :
+  alias : PAGE_TEST_GOOGLE_CHARTS
+  background_color : 16119285
+  aaf :
+   - -1
+   - -1
+  html_output_options :
+   - 10891
+  page_options :
+   - 192
+ style : {}
+ controls :
+  -
+    name : HTM_Gantt
+    identifier : 0x283ed6dd0183c08e
+    internal_properties : HgAAAB4AAADSyzHotTR2e+HRZZEvIBA3abLPKtsZ1cjMvHYPFA/4EhcAgPkmPFxXbn4g4WmHlOM+eRRTYbBkz2L76hFw3cxVdXf+XYMS7CBKzfT7Isfh3lmXZL/F/Sdpt4g09gTUuocZEmgkEmM7iLKB1IOISPfVj7iDGvWlbyiynE3npOP+fDwCIM97BN9h3EEfkoH4/hPAON/qEHW/zyddA0lDT3wnoSSAFScupg7h8uIjE95fPy5gpJKMUpfFdFCZEgHAKTOdaTfvBa6oypFxDqFTJSOFLoSi9x83UkE2ePEhjcWtqYcnJ6dMNTahAE7BO9f7pZxBrNJeGU+7beYrdsELMVAjtoegtd0YqzZcvecMYBJkc+BdlslmkoSQFp8s2rhktclbpwOnJwMD7xXaUW2+8MOvqQQB+9Pmcl5wvHC5dJA5q5cnuO6RDNSyyCVrCOEIl+lz5MRsEhWrVpZB1J4P/seRqhD8eXtulhZ0Ihrt3t/itLjUd9eDPQ6VNX282CjOXD3IEkszrNHyIRmHE/g/3+9ztxQZze1WGx3jDPm4QJDcMRnQ3X2hfaAaL/sJSOeawbCivgd/R6rDxU4Fwgxz0QGxwUrtMoaSgDBrPp2KkGt4p6HWO+8U0nL5tAN0RcYj7ZZKRuMuFi2v5IzB7m+Jnn89k+lK6Dx/qMsA/RZgl87DG/M630hnVRseW/rmhdGoWs0qKFcWtOunnhxVZh1UlVhzGJwSoCKF6IpzzODxa1WfvgSybPB8cAq4TywVAtaxxo/JL1p47w6wx9xLTeQPq6b71sgbp3YXCY3M409uOJIvJt+DGZELzwm7ln/uv8rH2BkFu4rCNNtxmYaUh12QJ9W5CmsVmgvVoBOEySmTDMIQiPuj9ZNUsBhX3fTDw5SMmGHr9XNJ7Q==
+    properties :
+     x : 6
+     y : 133
+     width : 968
+     height : 461
+     alias : A1
+     aaf :
+      - -1
+      - -1
+    style : {}
+    type : 12
+    code_elements :
+     type_code : 36
+     alias : A1
+     p_codes : []
+  -
+    name : BTN_Navigateur
+    identifier : 0x283ed81a01bd9705
+    internal_properties : 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
+    properties :
+     x : 6
+     y : 83
+     width : 348
+     height : 37
+     alias : A2
+     tab_order : 1
+     color : 16777215
+     background_color : 16024898
+     aaf :
+      - -1
+      - -1
+    style : {}
+    type : 4
+    code_elements :
+     type_code : 4
+     alias : A2
+     p_codes :
+      -
+        code : |1+
+         // Version 1
+         // Description 
+         // Bouton qui déclenche une action sur le navigateur uniquement
+        type : 851980
+      -
+        code : |1-
+         // appel d'une fonction Javascript contenant le chargement du gantt
+         LoadGantt()
+        type : 851998
+        role : N
+      -
+        type : 851984
+        enabled : false
+      -
+        type : 1310736
+        enabled : false
+      -
+        type : 852149
+        role : N
+        enabled : false
+  -
+    name : BTN_ServeurAjax
+    identifier : 0x283edc1d02134156
+    internal_properties : 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
+    properties :
+     x : 442
+     y : 83
+     width : 288
+     height : 37
+     alias : A3
+     tab_order : 2
+     color : 16777215
+     background_color : 16024898
+     aaf :
+      - -1
+      - -1
+    style : {}
+    type : 4
+    code_elements :
+     type_code : 4
+     alias : A3
+     p_codes :
+      -
+        code : |1+
+         // Version 1
+         // Description 
+         // Bouton qui déclenche une action serveur avec mise à jour des champs de la page
+        type : 851980
+      -
+        code : |1+
+         jsonDatas est un json
+         
+         // appel de la fonction de remplissage des données
+         jsonDatas = AJAXExécute(jsonGenereDatas)
+         
+         // on redessine le gantt avec les données
+         AfficherGantt(jsonDatas)
+        type : 851998
+        role : N
+      -
+        internal_properties : HgAAAB4AAADIGvCMyGJ0spZvlBOfg4zg+P/RO3A+pRLq+7W6HgV6WhVqy8BXh0QyjeIx5r8OE/adZcSG3HHhpsWQD8ZfXEduJwJcsNagoXAlm6s7faIm/W4Yj1ju
+        type : 851984
+      -
+        type : 1310736
+        enabled : false
+      -
+        type : 852149
+        role : N
+  -
+    name : IMG_Logo
+    identifier : 0x283ef4dc09f3ed23
+    internal_properties : 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
+    properties :
+     x : 6
+     y : 6
+     width : 84
+     height : 71
+     alias : A4
+     color : 6841183
+     background_color : -1
+     aaf :
+      - -1
+      - -1
+    style : {}
+    type : 22
+    code_elements :
+     type_code : 57
+     alias : A4
+     p_codes :
+      -
+        type : 851999
+        role : N
+      -
+        type : 851998
+        role : N
+      -
+        type : 851984
+        enabled : false
+      -
+        type : 1310736
+        enabled : false
+      -
+        type : 852149
+        role : N
+        enabled : false
+  -
+    name : LIB_Titre
+    identifier : 0x284030ff02bcd9c3
+    internal_properties : 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
+    properties :
+     x : 96
+     y : 6
+     width : 878
+     height : 71
+     alias : A5
+     tab_order : 1
+     color : 6841183
+     background_color : -1
+     aaf :
+      - -1
+      - -1
+    style : {}
+    type : 16
+    code_elements :
+     type_code : 47
+     alias : A5
+     p_codes :
+      -
+        type : 851998
+        role : N
+      -
+        internal_properties : HgAAAB4AAADKJME/TlLsQsb/jPP3y0TQeA9pqxg2RQpCQ/XSflVKch1iK/jnF6zSHXLlshuq90pxOXhauH2FOqE8Q4J7OGvCyyZwpNJMZbRhF893qa5agdAHgVbs
+        type : 851984
+      -
+        type : 1310736
+        enabled : false
+      -
+        type : 852149
+        role : N
+        enabled : false
+ type : 1
+ languages :
+  - fr-FR
+ code_elements :
+  type_code : 38
+  p_codes :
+   -
+     code : |1+
+      PROCEDURE MaPage()
+     type : 851968
+   -
+     type : 852300
+     enabled : false
+   -
+     type : 852017
+     enabled : false
+   -
+     type : 852119
+     enabled : false
+   -
+     type : 852298
+     role : N
+   -
+     code : |1+
+      // initialisation de l'objet google.charts
+      InitGantt()
+     language : JS
+     type : 851999
+     role : N
+   -
+     type : 852000
+     role : N
+   -
+     type : 852232
+     enabled : false
+   -
+     type : 852167
+     enabled : false
+   -
+     type : 852169
+     role : N
+     enabled : false
+   -
+     type : 852225
+     role : N
+     enabled : false
+   -
+     type : 852227
+     enabled : false
+   -
+     type : 1310979
+     enabled : false
+   -
+     type : 852228
+     role : N
+     enabled : false
+  procedures :
+   -
+     name : LoadGantt
+     procedure_id : 1747071152733947470
+     type_code : 14
+     code : |1+
+      function LoadGantt()
+      {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Task ID');
+            data.addColumn('string', 'Task Name');
+            data.addColumn('string', 'Resource');
+            data.addColumn('date', 'Start Date');
+            data.addColumn('date', 'End Date');
+            data.addColumn('number', 'Duration');
+            data.addColumn('number', 'Percent Complete');
+            data.addColumn('string', 'Dependencies');
+      
+            data.addRows([
+              ['Research', 'Find sources', null,
+               new Date(2015, 0, 1), new Date(2015, 0, 5), null,  100,  null],
+              ['Write', 'Write paper', 'write',
+               null, new Date(2015, 0, 9), daysToMilliseconds(3), 25, 'Research,Outline'],
+              ['Cite', 'Create bibliography', 'write',
+               null, new Date(2015, 0, 7), daysToMilliseconds(1), 20, 'Research'],
+              ['Complete', 'Hand in paper', 'complete',
+               null, new Date(2015, 0, 10), daysToMilliseconds(1), 0, 'Cite,Write'],
+              ['Outline', 'Outline paper', 'write',
+               null, new Date(2015, 0, 6), daysToMilliseconds(1), 100, 'Research']
+            ]);
+      
+            var options = {
+      //        height: 275
+            };
+      
+            var chart = new google.visualization.Gantt(document.getElementById('chart_gantt'));
+      
+            chart.draw(data, options);
+      
+      }
+      
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : daysToMilliseconds
+     procedure_id : 1747073622342290612
+     type_code : 14
+     code : |1+
+      function daysToMilliseconds(days) {
+            return days * 24 * 60 * 60 * 1000;
+      }
+      
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : InitGantt
+     procedure_id : 1747073845680773014
+     type_code : 14
+     code : |1+
+      function InitGantt()
+      {
+       	google.charts.load('current', {'packages':['gantt']});
+      }    
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : jsonGenereDatas
+     procedure_id : 1747076504278468912
+     type_code : 14
+     code : |1+
+      // Résumé : Génération des tâches et valeurs à afficher dans le Gantt.
+      //          Cette procédure construit un objet JSON structuré pour être consommé
+      //          par un graphique de Gantt Google Charts.
+      // Syntaxe :
+      //[ <Résultat> = ] jsonGenereDatas ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	JSON : Un objet JSON au format { "colonnes":[] , "lignes":[]},
+      //         prêt à être utilisé pour dessiner un diagramme de Gantt.
+      //
+      // Exemple :
+      // // Appel de la procédure pour obtenir les données du Gantt
+      // monJSONGantt est un JSON
+      // monJSONGantt = jsonGenereDatas()
+      //
+      // // Affichage du JSON (pour debug ou transmission)
+      // Trace(JSONVersChaîne(monJSONGantt))
+      //
+      procédure jsonGenereDatas()
+      jsDatas est un json
+      
+      STColonne est une structure
+      	type est une chaine
+      	label est UNE CHAÎNE
+      fin
+      
+      STDonnees est  une Structure
+      	colonnes	est un tableau de STColonne
+      	lignes		est un tableau de variant
+      FIN
+      stUneColonne est une STColonne
+      
+      maStructureDonnees est un STDonnees
+      
+      // Les colonnes google.charts tiennent le format suivant
+      // https://developers.google.com/chart/interactive/docs/gallery/ganttchart?hl=fr#data-format
+      stUneColonne.type = "string"
+      stUneColonne.label=  "Task ID"
+      tableauajouteLigne(maStructureDonnees.colonnes, stUneColonne)
+      stUneColonne.type	= "string"
+      stUneColonne.label	=  "Task Name"
+      TableauAjouteLigne(maStructureDonnees.colonnes, stUneColonne)
+      stUneColonne.type	= "string"
+      stUneColonne.label	=  "Resource"
+      TableauAjouteLigne(maStructureDonnees.colonnes, stUneColonne)
+      stUneColonne.type	= "date"
+      stUneColonne.label	=  "Start Date" // Optionnel, mettre null si non utilisé
+      TableauAjouteLigne(maStructureDonnees.colonnes, stUneColonne)
+      stUneColonne.type	= "date"
+      stUneColonne.label	=  "End Date" // Optionnel, mettre null si non utilisé
+      TableauAjouteLigne(maStructureDonnees.colonnes, stUneColonne)
+      stUneColonne.type	= "number"
+      stUneColonne.label	=  "Duration"
+      TableauAjouteLigne(maStructureDonnees.colonnes, stUneColonne) // OU {type: "number", label: "Duration"}
+      stUneColonne.type	= "number"
+      stUneColonne.label	=  "Percent Complete"
+      TableauAjouteLigne(maStructureDonnees.colonnes, stUneColonne)
+      stUneColonne.type	= "string"
+      stUneColonne.label	=  "Dependencies"
+      TableauAjouteLigne(maStructureDonnees.colonnes, stUneColonne)
+      
+      // pour les lignes
+      // Tâche principale : Création du poc
+      TableauAjouteLigne(maStructureDonnees.lignes,["poc_main", "Création du POC", "Equipe Projet POC", "2025-05-26", "2025-05-27", null, 0, null]);
+      
+      // Sous-tâches de "Création du POC" 
+      TableauAjouteLigne(maStructureDonnees.lignes,["poc_analyse", "Phase d'Analyse et Conception POC", "Equipe A", "2025-05-27", "2025-05-28", null, 0, "poc_main"]); 
+      TableauAjouteLigne(maStructureDonnees.lignes,["poc_dev", "Développement du POC", "Equipe B", "2025-05-29", "2025-05-31", null, 0, "poc_analyse"]); 
+      TableauAjouteLigne(maStructureDonnees.lignes,["poc_test", "Tests et Itérations du POC", "Equipe A", "2025-06-01", "2025-06-02", null, 0, "poc_dev"]); 
+      TableauAjouteLigne(maStructureDonnees.lignes,["poc_livraison", "Finalisation et Livraison du POC", "Equipe Projet POC", "2025-06-03", "2025-06-04", null, 0, "poc_test"]); 
+      
+      // Sous-tâches de "Rédaction et Finalisation Article Blog" 
+      TableauAjouteLigne(maStructureDonnees.lignes,["redaction_ecriture", "Écriture de l'article", "Auteur Blog", "2025-06-06", "2025-06-07", null, 0, "poc_test"]); 
+      TableauAjouteLigne(maStructureDonnees.lignes,["redaction_relecture", "Relecture de l'article", "Correcteur", "2025-06-08", "2025-06-09", null, 0, "redaction_ecriture"]); 
+      
+      jsDatas = VariantVersJSON(maStructureDonnees)
+      
+      renvoyer  jsDatas
+     type : 458752
+   -
+     name : RedessinerGantt
+     procedure_id : 1747091279108277889
+     type_code : 14
+     code : |1+
+      /**
+       * Redessine un diagramme de Gantt en utilisant les données fournies par le serveur.
+       * Cette fonction parse une chaîne JSON, structure les données pour Google Charts,
+       * puis initialise et dessine un graphique de Gantt dans un conteneur HTML spécifié.
+       *
+       * @param {string} jsonReponseServeur - Une chaîne JSON contenant les données du Gantt,
+       * devant inclure les définitions de 'colonnes' et les 'lignes' de données.
+       * Exemple de structure JSON attendue :
+       * {
+       * "colonnes": [
+       * { "type": "string", "label": "Task ID" },
+       * { "type": "string", "label": "Task Name" },
+       * { "type": "string", "label": "Resource" },
+       * { "type": "date", "label": "Start Date" },
+       * { "type": "date", "label": "End Date" },
+       * { "type": "number", "label": "Duration" },
+       * { "type": "number", "label": "Percent Complete" },
+       * { "type": "string", "label": "Dependencies" }
+       * ],
+       * "lignes": [
+       * ["Task 1", "Phase Initiale", "Dev", "2023-01-01", "2023-01-05", null, 100, null],
+       * ["Task 2", "Développement", "Dev", "2023-01-06", "2023-01-15", null, 50, "Task 1"]
+       * ]
+       * }
+       *
+       * @returns {void} La fonction ne retourne rien. Elle s'arrête prématurément
+       * en cas d'erreur (parsing JSON, structure des données invalide,
+       * ou conteneur du graphique introuvable).
+       */
+      function RedessinerGantt(jsonReponseServeur)
+      {
+          var donneesDuServeur;
+          try {
+              donneesDuServeur = JSON.parse(jsonReponseServeur);
+          } catch (e) {
+              console.error("Erreur lors de l'analyse du JSON : ", e);
+              console.error("JSON reçu : ", jsonReponseServeur);
+              // Affichez un message d'erreur
+              return;
+          }
+      
+      	var data = new google.visualization.DataTable();
+      
+          // 1. Ajoutez les colonnes définies par le serveur
+          if (donneesDuServeur.colonnes && Array.isArray(donneesDuServeur.colonnes)) {
+              donneesDuServeur.colonnes.forEach(function(colonne) {
+                  data.addColumn(colonne); // Chaque objet colonne est {type: "...", label: "..."}
+              });
+          } else {
+              console.error("La structure JSON ne contient pas de section 'colonnes' valide pour le Gantt.");
+              return;
+          }
+      
+          // Vérification du nombre de colonnes ajoutées (devrait être 7)
+          console.log("Nombre de colonnes ajoutées à DataTable:", data.getNumberOfColumns());
+      
+          // 2. Préparez et ajoutez les lignes
+          if (donneesDuServeur.lignes && Array.isArray(donneesDuServeur.lignes)) {
+              var lignesPourGantt = donneesDuServeur.lignes.map(function(ligneServeur, indexLigne) {
+                  // ligneServeur est un tableau de 7 éléments basé sur votre JSON:
+                  // [TaskID, TaskName, Resource, StartDateStr, EndDateStr, PercentComplete, Dependencies]
+      			console.log("LigneServeur");
+      			console.log(ligneServeur);
+      
+                  var ligneTraitee = [];
+      
+                  // Task ID (string) - Colonne 0
+                  ligneTraitee[0] = ligneServeur[0];
+      
+                  // Task Name (string) - Colonne 1
+                  ligneTraitee[1] = ligneServeur[1];
+      
+                  // Resource (string) - Colonne 2
+                  ligneTraitee[2] = ligneServeur[2];
+      
+                  // Start Date (date) - Colonne 3
+                  // Convertir la chaîne de date en objet Date JavaScript
+                  ligneTraitee[3] = ligneServeur[3] ? new Date(ligneServeur[3]) : null;
+      
+                  // End Date (date) - Colonne 4
+                  // Convertir la chaîne de date en objet Date JavaScript
+                  // (Basé sur votre JSON, la 5ème colonne (index 4) est 'End Date' de type 'date')
+                  ligneTraitee[4] = ligneServeur[4] ? new Date(ligneServeur[4]) : null;
+      
+      			// Duration (number) - Colonne 5
+                  ligneTraitee[5] = ligneServeur[5] !== null ? parseInt(ligneServeur[5], 10) : null;
+      
+                  // Percent Complete (number) - Colonne 5
+                  ligneTraitee[6] = ligneServeur[6] !== null ? parseInt(ligneServeur[6], 10) : null;
+      
+                  // Dependencies (string) - Colonne 6
+                  ligneTraitee[7] = ligneServeur[7];
+      
+      			console.log("ligneTraitee");
+      			console.log(ligneTraitee);
+      
+                  // À ce stade, ligneTraitee DOIT avoir 7 éléments.
+                  if (ligneTraitee.length !== data.getNumberOfColumns()) {
+                      console.error("Erreur dans le traitement de la ligne " + indexLigne +
+                                    ": Nombre d'éléments (" + ligneTraitee.length +
+                                    ") ne correspond pas au nombre de colonnes (" + data.getNumberOfColumns() + ").");
+                      console.log("Ligne serveur originale:", ligneServeur);
+                      console.log("Ligne traitée:", ligneTraitee);
+                      // Vous pourriez choisir de retourner null ou de lancer une erreur ici
+                      // pour éviter que addRows ne la reçoive.
+                      // Cependant, l'erreur se produira de toute façon dans addRows.
+                  }
+                  // console.log("Ligne " + indexLigne + " traitée :", ligneTraitee);
+                  return ligneTraitee;
+              });
+      
+              // Vérification avant d'ajouter les lignes
+              // console.log("Lignes prêtes pour addRows:", lignesPourGantt);
+      		console.log("lignesPourGantt");
+      		console.log(lignesPourGantt);
+              try {
+                  data.addRows(lignesPourGantt);
+              } catch (e) {
+                  console.error("Erreur lors de data.addRows(): ", e);
+                  console.error("Données des lignes qui ont causé l'erreur: ", lignesPourGantt);
+                  return; // Arrêter ici si addRows échoue
+              }
+      
+          } else {
+              console.error("La structure JSON ne contient pas de section 'lignes' valide.");
+              return;
+          }
+      
+          // Options du diagramme de Gantt
+          var options = {
+      //        height: (donneesDuServeur.lignes ? donneesDuServeur.lignes.length * 41 : 200) + 50,
+              gantt: {
+                  criticalPathEnabled: false,
+      			percentEnabled: true,
+                  arrow: {
+                      angle: 100,
+                      width: 2,
+                      color: 'grey',
+                      radius: 0
+                  },
+                  labelStyle: {
+                      fontName: 'Arial',
+                      fontSize: 12,
+                      color: '#757575'
+                  },
+                  trackHeight: 40,
+                  sortTasks: false
+              }
+          };
+      
+          var chartContainer = document.getElementById('chart_gantt');
+          if (!chartContainer) {
+              console.error("L'élément conteneur du graphique avec l'ID 'chart_gantt' est introuvable.");
+              return;
+          }
+          var chart = new google.visualization.Gantt(chartContainer);
+          chart.draw(data, options);
+      }
+     language : JS
+     type : 458752
+     role : N
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : HgAAAB4AAADXPUOq6bQdTI/fs1mC0I6nimWl2G84EsAbne5i32IM05uoRA==
+  original_name : PAGE_SansNom1
+resources :
+ string_res :
+  identifier : 0x183ed6b6000128b3
+  internal_properties : HgAAAB4AAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+webification :
+ internal_properties : HgAAAB4AAACYzxT95H3qP7nIys4LqA==
+custom_note :
+ internal_properties : HgAAAB4AAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=

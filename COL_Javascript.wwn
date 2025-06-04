@@ -1,0 +1,447 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : COL_Javascript
+ major_version : 30
+ minor_version : 0
+ type : 65539
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x1840350c0049aad6
+ internal_properties : HgAAAB4AAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  type_code : 41
+  p_codes :
+   -
+     type : 983040
+     role : N
+   -
+     type : 983042
+     role : N
+  procedures :
+   -
+     name : fusionnerOptions
+     procedure_id : 1747455058389955072
+     type_code : 15
+     code : |1-
+      /**
+       * Fusionne récursivement les options personnalisées avec les options par défaut
+       * @param {Object} defaultOptions - Options par défaut
+       * @param {Object} customOptions - Options personnalisées
+       * @returns {Object} Options fusionnées
+       */
+      function fusionnerOptions(defaultOptions, customOptions) {
+          const result = { ...defaultOptions };
+      
+          for (const key in customOptions) {
+              if (customOptions.hasOwnProperty(key)) {
+                  if (typeof customOptions[key] === 'object' && customOptions[key] !== null && !Array.isArray(customOptions[key])) {
+                      result[key] = fusionnerOptions(result[key] || {}, customOptions[key]);
+                  } else {
+                      result[key] = customOptions[key];
+                  }
+              }
+          }
+      
+          return result;
+      }
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : configurerOptions
+     procedure_id : 1747455264548433046
+     type_code : 15
+     code : |1+
+      /**
+       * Configure les options du graphique Gantt
+       * @param {Object} donneesDuServeur - Les données du serveur
+       * @param {Object} customOptions - Options personnalisées
+       * @returns {Object} Options configurées
+       */
+      function configurerOptions(donneesDuServeur, customOptions) {
+          const defaultOptions = {
+              gantt: {
+                  criticalPathEnabled: false,
+                  percentEnabled: true,
+                  arrow: {
+                      angle: 100,
+                      width: 2,
+                      color: 'grey',
+                      radius: 0
+                  },
+                  labelStyle: {
+                      fontName: 'Arial',
+                      fontSize: 12,
+                      color: '#757575'
+                  },
+                  trackHeight: 40,
+                  sortTasks: false
+              }
+          };
+      
+          // Calcul automatique de la hauteur basée sur le nombre de lignes
+          if (donneesDuServeur.lignes && donneesDuServeur.lignes.length > 0) {
+              defaultOptions.height = Math.max(200, donneesDuServeur.lignes.length * 45 + 100);
+          }
+      
+          // Fusion des options personnalisées avec les options par défaut
+          return fusionnerOptions(defaultOptions, customOptions);
+      }
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : parseNumber
+     procedure_id : 1747455552311309253
+     type_code : 15
+     code : |1-
+      /**
+       * Parse un nombre de façon sécurisée
+       * @param {string|number|null} numberValue - La valeur numérique à parser
+       * @returns {number|null} Le nombre ou null
+       */
+      function parseNumber(numberValue) {
+          if (numberValue === null || numberValue === undefined || numberValue === '') {
+              return null;
+          }
+          
+          if (typeof numberValue === 'number') {
+              return isNaN(numberValue) ? null : numberValue;
+          }
+          
+          if (typeof numberValue === 'string') {
+              const parsed = parseFloat(numberValue);
+              return isNaN(parsed) ? null : parsed;
+          }
+          
+          return null;
+      }
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : parseDate
+     procedure_id : 1747455676865389618
+     type_code : 15
+     code : |1+
+      /**
+       * Parse une date de façon sécurisée
+       * @param {string|Date|null} dateValue - La valeur de date à parser
+       * @returns {Date|null} L'objet Date ou null
+       */
+      function parseDate(dateValue) {
+          if (!dateValue) return null;
+          
+          if (dateValue instanceof Date) return dateValue;
+          
+          if (typeof dateValue === 'string') {
+              const parsedDate = new Date(dateValue);
+              return isNaN(parsedDate.getTime()) ? null : parsedDate;
+          }
+          
+          return null;
+      }
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : traiterLigneIndividuelle
+     procedure_id : 1747455835779282481
+     type_code : 15
+     code : |1+
+      /**
+       * Traite une ligne individuelle de données
+       * @param {Array} ligneServeur - La ligne de données du serveur
+       * @param {number} indexLigne - L'index de la ligne
+       * @param {number} nombreColonnes - Nombre de colonnes attendues
+       * @returns {Array|null} La ligne traitée ou null en cas d'erreur
+       */
+      function traiterLigneIndividuelle(ligneServeur, indexLigne, nombreColonnes) {
+          if (!Array.isArray(ligneServeur)) {
+              console.error(`Ligne ${indexLigne} : doit être un tableau`);
+              return null;
+          }
+      
+          const ligneTraitee = [];
+      
+          // Task ID (string) - Colonne 0
+          ligneTraitee[0] = ligneServeur[0] || '';
+      
+          // Task Name (string) - Colonne 1
+          ligneTraitee[1] = ligneServeur[1] || '';
+      
+          // Resource (string) - Colonne 2
+          ligneTraitee[2] = ligneServeur[2] || '';
+      
+          // Start Date (date) - Colonne 3
+          ligneTraitee[3] = parseDate(ligneServeur[3]);
+      
+          // End Date (date) - Colonne 4
+          ligneTraitee[4] = parseDate(ligneServeur[4]);
+      
+          // Duration (number) - Colonne 5
+          ligneTraitee[5] = parseNumber(ligneServeur[5]);
+      
+          // Percent Complete (number) - Colonne 6
+          ligneTraitee[6] = parseNumber(ligneServeur[6]);
+      
+          // Dependencies (string) - Colonne 7
+          ligneTraitee[7] = ligneServeur[7] || null;
+      
+          // Validation du nombre d'éléments
+          if (ligneTraitee.length !== nombreColonnes) {
+              console.error(`Ligne ${indexLigne} : nombre d éléments (${ligneTraitee.length}) différent du nombre de colonnes (${nombreColonnes})`);
+              return null;
+          }
+      
+          return ligneTraitee;
+      }
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : traiterLignesDonnees
+     procedure_id : 1747456063412601669
+     type_code : 15
+     code : |1+
+      /**
+       * Traite les lignes de données pour les adapter au format Google Charts
+       * @param {Array} lignesServeur - Les lignes de données du serveur
+       * @param {number} nombreColonnes - Nombre de colonnes attendues
+       * @returns {Array} Les lignes traitées
+       */
+      function traiterLignesDonnees(lignesServeur, nombreColonnes) {
+          const lignesTraitees = [];
+      
+          lignesServeur.forEach((ligneServeur, index) => {
+              try {
+                  const ligneTraitee = traiterLigneIndividuelle(ligneServeur, index, nombreColonnes);
+                  if (ligneTraitee) {
+                      lignesTraitees.push(ligneTraitee);
+                  }
+              } catch (error) {
+                  console.error(`Erreur lors du traitement de la ligne ${index} :`, error);
+                  console.log('Ligne problématique :', ligneServeur);
+              }
+          });
+      
+          return lignesTraitees;
+      }
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : creerDataTable
+     procedure_id : 1747456218031460528
+     type_code : 15
+     code : |1+
+      /**
+       * Crée et configure la DataTable Google Charts
+       * @param {Object} donneesDuServeur - Les données du serveur
+       * @returns {google.visualization.DataTable|null} La DataTable configurée ou null en cas d'erreur
+       */
+      function creerDataTable(donneesDuServeur) {
+          try {
+              const dataTable = new google.visualization.DataTable();
+      
+              // Ajout des colonnes
+              donneesDuServeur.colonnes.forEach((colonne, index) => {
+                  try {
+                      dataTable.addColumn(colonne);
+                  } catch (error) {
+                      console.error(`Erreur lors de l'ajout de la colonne ${index} :`, error);
+                      throw error;
+                  }
+              });
+      
+              console.log(`${dataTable.getNumberOfColumns()} colonnes ajoutées à la DataTable`);
+      
+              // Traitement et ajout des lignes
+              if (donneesDuServeur.lignes && donneesDuServeur.lignes.length > 0) {
+                  const lignesTraitees = traiterLignesDonnees(donneesDuServeur.lignes, dataTable.getNumberOfColumns());
+                  
+                  if (lignesTraitees.length > 0) {
+                      dataTable.addRows(lignesTraitees);
+                      console.log(`${lignesTraitees.length} lignes ajoutées à la DataTable`);
+                  }
+              }
+      
+              return dataTable;
+      
+          } catch (error) {
+              console.error('Erreur lors de la création de la DataTable :', error);
+              return null;
+          }
+      }
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : validerStructureDonnees
+     procedure_id : 1747456346880574601
+     type_code : 15
+     code : |1+
+      /**
+       * Valide la structure des données reçues du serveur
+       * @param {Object} donnees - Les données à valider
+       * @returns {Object} Résultat de la validation avec isValid et errors
+       */
+      function validerStructureDonnees(donnees) {
+          const errors = [];
+      
+          if (!donnees || typeof donnees !== 'object') {
+              errors.push('Les données doivent être un objet');
+              return { isValid: false, errors };
+          }
+      
+          // Validation des colonnes
+          if (!donnees.colonnes || !Array.isArray(donnees.colonnes)) {
+              errors.push('La section "colonnes" est manquante ou n\'est pas un tableau');
+          } else if (donnees.colonnes.length === 0) {
+              errors.push('La section "colonnes" ne peut pas être vide');
+          } else {
+              // Validation de chaque colonne
+              donnees.colonnes.forEach((colonne, index) => {
+                  if (!colonne.type || !colonne.label) {
+                      errors.push(`Colonne ${index} : propriétés "type" et "label" requises`);
+                  }
+              });
+          }
+      
+          // Validation des lignes
+          if (!donnees.lignes || !Array.isArray(donnees.lignes)) {
+              errors.push('La section "lignes" est manquante ou n\'est pas un tableau');
+          } else if (donnees.lignes.length === 0) {
+              console.warn('Aucune ligne de données fournie');
+          }
+      
+          return {
+              isValid: errors.length === 0,
+              errors
+          };
+      }
+     language : JS
+     type : 458752
+     role : N
+   -
+     name : AfficherGantt
+     procedure_id : 1747456613168609218
+     type_code : 15
+     code : |1+
+      /**
+       * Redessine un diagramme de Gantt en utilisant les données fournies par le serveur.
+       * Cette fonction parse une chaîne JSON, structure les données pour Google Charts,
+       * puis initialise et dessine un graphique de Gantt dans un conteneur HTML spécifié.
+       *
+       * @param {string} jsonReponseServeur - Une chaîne JSON contenant les données du Gantt,
+       * devant inclure les définitions de 'colonnes' et les 'lignes' de données.
+       * @param {Object} [options={}] - Options personnalisées pour le graphique
+       * @param {string} [containerId='chart_gantt'] - ID du conteneur HTML
+       * @returns {boolean} True si le graphique a été créé avec succès, false sinon
+       *
+       * @example
+       * const jsonData = {
+       *   "colonnes": [
+       *     { "type": "string", "label": "Task ID" },
+       *     { "type": "string", "label": "Task Name" },
+       *     { "type": "string", "label": "Resource" },
+       *     { "type": "date", "label": "Start Date" },
+       *     { "type": "date", "label": "End Date" },
+       *     { "type": "number", "label": "Duration" },
+       *     { "type": "number", "label": "Percent Complete" },
+       *     { "type": "string", "label": "Dependencies" }
+       *   ],
+       *   "lignes": [
+       *     ["Task 1", "Phase Initiale", "Dev", "2023-01-01", "2023-01-05", null, 100, null]
+       *   ]
+       * };
+       *
+       * const success = RedessinerGantt(JSON.stringify(jsonData));
+       */
+      function AfficherGantt(jsonReponseServeur, customOptions = {}, containerId = 'chart_gantt') {
+          // Validation des paramètres d'entrée
+          if (!jsonReponseServeur || typeof jsonReponseServeur !== 'string') {
+              console.error('Paramètre jsonReponseServeur invalide : doit être une chaîne JSON non vide');
+              return false;
+          }
+      
+          if (typeof containerId !== 'string') {
+              console.error('Paramètre containerId invalide : doit être une chaîne');
+              return false;
+          }
+      
+          // Vérification de la disponibilité de Google Charts
+          if (typeof google === 'undefined' || !google.visualization) {
+              console.error('Google Charts n\'est pas disponible. Assurez-vous que la bibliothèque est chargée.');
+              return false;
+          }
+      
+          let donneesDuServeur;
+      
+          // Parse du JSON avec gestion d'erreur améliorée
+          try {
+              donneesDuServeur = JSON.parse(jsonReponseServeur);
+          } catch (error) {
+              console.error('Erreur lors de l\'analyse du JSON :', error.message);
+              console.error('JSON reçu (premiers 200 caractères) :', jsonReponseServeur.substring(0, 200));
+              return false;
+          }
+      
+          // Validation de la structure des données
+          const validationResult = validerStructureDonnees(donneesDuServeur);
+          if (!validationResult.isValid) {
+              console.error('Structure de données invalide :', validationResult.errors.join(', '));
+              return false;
+          }
+      
+          // Vérification du conteneur
+          const chartContainer = document.getElementById(containerId);
+          if (!chartContainer) {
+              console.error(`L'élément conteneur avec l'ID '${containerId}' est introuvable.`);
+              return false;
+          }
+      
+          try {
+              // Création et configuration de la DataTable
+              const dataTable = creerDataTable(donneesDuServeur);
+              if (!dataTable) {
+                  return false;
+              }
+      
+              // Configuration des options avec fusion des options personnalisées
+              const options = configurerOptions(donneesDuServeur, customOptions);
+      
+              // Création et dessin du graphique
+              const chart = new google.visualization.Gantt(chartContainer);
+      
+              // Ajout d'un gestionnaire d'erreur pour le dessin
+              google.visualization.events.addListener(chart, 'error', function(error) {
+                  console.error('Erreur lors du dessin du graphique Gantt :', error);
+              });
+      
+              chart.draw(dataTable, options);
+      
+              console.log('Diagramme de Gantt créé avec succès');
+              return true;
+      
+          } catch (error) {
+              console.error('Erreur lors de la création du diagramme de Gantt :', error);
+              return false;
+          }
+      }
+     language : JS
+     type : 458752
+     role : N
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : HgAAAB4AAADXPUOq6bQdTI/fs1mC0I6nimWl2G84EsAbne5i32IM05uoRA==
+  original_name : NAV_SansNom1
+resources :
+ string_res :
+  identifier : 0x1840350400478bf3
+  internal_properties : HgAAAB4AAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : HgAAAB4AAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ
