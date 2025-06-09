@@ -1,4 +1,17 @@
-# POC - Intégration d'un diagramme de Gantt Google Charts dans WWEBDEV
+# Intégrer un diagramme de Gantt interactif dans Webdev ? C’est possible, simplement, avec Google Charts !
 
-Ce projet démontre l'intégration d'un composant Gantt interactif, issu de la librairie **Google Charts**, dans un site **WEBDEV** via un champ HTML. 
-Outre une alimentation par code navigateur, une alimentation du gantt par une procédure serveur ajax est fournie.
+Dans ce POC, nous avons connecté Webdev 2025 à la librairie JavaScript Google Charts Gantt pour afficher un planning visuel, dynamique et sans licence.
+
+## 🎯 Résultat :
+
+📅 Affichage structuré des tâches, jalons et dépendances
+
+⚙️ Génération des données côté serveur en Webdev
+
+🔄 Rafraîchissement via AJAX pour un Gantt toujours à jour
+
+👉 Une solution légère et moderne pour enrichir une application Webdev sans composant natif lourd.
+
+📂 Article du blog : https://www.isineva.com/webdev-diagrammes-de-gantt/
+
+#Webdev #PCSoft #GoogleCharts #Gantt #DevWeb #Javascript #LowCode #POC #Planning #DevTool #IsiNeva
